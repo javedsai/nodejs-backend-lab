@@ -1,0 +1,66 @@
+<%- include('partials/header.ejs') %>
+
+<!-- content -->
+<main class="py-5">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header card-title">
+            <strong>Update New Contact</strong>
+          </div>
+          <form method="post" action="/update-contact/<%= contact._id %>">           
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group row">
+                    <label for="firstName" class="col-md-3 col-form-label">First Name</label>
+                    <div class="col-md-9">
+                      <input type="text" name="firstName" id="firstName" value="<%= contact.firstName %>" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="lastName" class="col-md-3 col-form-label">Last Name</label>
+                    <div class="col-md-9">
+                      <input type="text" name="lastName" id="lastName" value="<%= contact.lastName %>" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="email" class="col-md-3 col-form-label">Email</label>
+                    <div class="col-md-9">
+                      <input type="text" name="email" id="email" value="<%= contact.email %>" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="phone" class="col-md-3 col-form-label">Phone</label>
+                    <div class="col-md-9">
+                      <input type="text" name="phone" id="phone" value="<%= contact.phone %>" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="name" class="col-md-3 col-form-label">Address</label>
+                    <div class="col-md-9">
+                      <textarea name="address" id="address" rows="3" class="form-control"><%= contact.address %></textarea>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="form-group row mb-0">
+                    <div class="col-md-9 offset-md-3">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                        <a href="/" class="btn btn-outline-secondary">Cancel</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<%- include('partials/footer.ejs') %>
