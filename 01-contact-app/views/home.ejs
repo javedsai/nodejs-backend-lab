@@ -28,7 +28,8 @@
                   </thead>
                   <tbody>
                       <!-- Loop This -->
-                  <% let srno = 1 %>
+                  <% let srno = result.pagingCounter %>
+                  <% let contacts = result.docs %>
                   <% contacts.forEach((contact) => { %>
 
                     <tr>
@@ -46,7 +47,26 @@
                   <% }) %>
                     <!-- EO Loop This -->                    
                   </tbody>
-                </table> 
+                </table>
+                <!-- Pagination --> 
+                <% const prevPageDisabledClass = !result.hasPrevPage ? 'disabled' : '' %>
+                <% const nextPageDisabledClass = !result.hasNextPage ? 'disabled' : '' %>
+                <nav>
+                  <ul class="pagination justify-content-center">
+                    <li class="page-item <%= prevPageDisabledClass %>">
+                      <a class="page-link" href="/?page=<%= result.prevPage %>">Previous</a>
+                    </li>
+                    <% for(let i=1; i<= result.totalPages; i++) { %>                    
+                    <% const activeClass = result.page == i ? 'active' : '' %>                     
+                    
+                    <li class="page-item <%= activeClass %>"><a class="page-link" href="/?page=<%= i %>"><%= i %></a></li>
+                    <% } %>
+                    <li class="page-item <%= nextPageDisabledClass %>">
+                      <a class="page-link" href="/?page=<%= result.nextPage %>">Next</a>
+                    </li>
+                  </ul>
+                </nav>
+                <!-- EO Pagination -->                 
               </div>
             </div>
           </div>

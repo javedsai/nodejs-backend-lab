@@ -23,9 +23,14 @@ app.use(express.static('public'))
 
 //Routes
 app.get('/', async (req, res) => {
-    const contacts = await Contact.find()
-    // res.send(contacts)
-    res.render('home', {contacts})
+    // const contacts = await Contact.find()
+    const { page=1, limit=5} = req.query
+    const options = {
+        page:parseInt(page),
+        limit:parseInt(limit)
+    }
+    const result = await Contact.paginate({}, options)
+    res.render('home', {result})
 })
 
 app.get('/show-contact/:id', async (req, res) => {
