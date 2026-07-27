@@ -34,8 +34,8 @@ Build and showcase practical backend projects using the Node.js ecosystem, progr
 
 | Folder | Description | Tech Stack | Status |
 |---------|---------|-------------|:------:|
-| **01-contact-app** | Contact management application featuring CRUD operations, MVC and Pagination | **Node.js, Express.js, MongoDB, Mongoose, EJS** | ⏳ In Progress |
-| **02-...** | Coming Soon | TBD | ⬜ Planned |
+| **01-contact-app** | Contact management application featuring CRUD operations, MVC, Error Handling and Pagination | **Node.js, Express.js, MongoDB, Mongoose, EJS** | ✅ Completed |
+| **02-...** | Middleware | **Node.js, Express.js, MongoDB, Mongoose** | ⬜ Planned |
 
 
 ---
