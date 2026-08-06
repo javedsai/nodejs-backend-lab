@@ -35,7 +35,7 @@ Build and showcase practical backend projects using the Node.js ecosystem, progr
 | Folder | Description | Tech Stack | Status |
 |---------|---------|-------------|:------:|
 | **01-contact-app** | Contact management application featuring CRUD operations, MVC, Error Handling and Pagination | **Node.js, Express.js, MongoDB, Mongoose, EJS** | ✅ Completed |
-| **02-...** | Middleware | **Node.js, Express.js, MongoDB, Mongoose** | ⬜ Planned |
+| **02-middleware-project** | Middleware | **Node.js, Express.js, Middleware** | ⏳ In Progress |
 
 
 ---
@@ -45,3 +45,27 @@ Build and showcase practical backend projects using the Node.js ecosystem, progr
 - Each project is self-contained and focuses on a specific backend concept.
 - Projects are numbered sequentially to reflect the progression of topics.
 - The repository is continuously updated as new concepts and projects are completed.
+
+<!--
+=========================================================
+STATUS LEGEND (Hidden Comment)
+=========================================================
+
+✅ Completed
+⏳ In Progress
+⬜ Not Started / Planned
+
+Useful Emojis:
+📚 Learning
+🚀 Project
+📝 Notes
+⚠️ Important
+💡 Tip
+🔧 Implementation
+🐛 Bug Fix
+🎯 Goal
+
+Shortcut:
+Windows + .   (Emoji Picker)
+=========================================================
+-->
