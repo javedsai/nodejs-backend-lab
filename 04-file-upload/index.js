@@ -43,11 +43,18 @@ app.get('/', (req, res) => {
     res.render('home', {errors: []})
 })
 
-app.post('/save-form', upload.single('userFile'), (req, res) => {
-    if (!req.file) {
+// app.post('/save-form', upload.single('userFile'), (req, res) => {
+//     if (!req.file) {
+//         return res.status(400).send("No Files Uploaded")
+//     }
+//     return res.send(req.file)
+// })
+
+app.post('/save-form', upload.array('userFile', 3), (req, res) => {
+    if (!req.files || req.files.length === 0) {
         return res.status(400).send("No Files Uploaded")
     }
-    return res.send(req.file)
+    return res.send(req.files)
 })
 
 app.listen(3000, () => {
