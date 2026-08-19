@@ -37,6 +37,7 @@ Build and showcase practical backend projects using the Node.js ecosystem, progr
 | **01-contact-app** | Contact management application featuring CRUD operations, MVC, Error Handling and Pagination | **Node.js, Express.js, MongoDB, Mongoose, EJS** | ✅ Completed |
 | **02-middleware-project** | Middleware | **Node.js, Express.js, Middleware** | ✅ Completed |
 | **03-form-validation** | Form Validation | **Node.js, Express.js, Middleware** | ✅ Completed |
+| **04-file-upload** | File Upload | **Node.js, Express.js, Middleware, Multer** | ⏳ In Progress |
 
 
 ---
