@@ -27,23 +27,28 @@
       <form class="row g-3" enctype="multipart/form-data" method="post" action="/save-form">        
         <!-- 1st Row -->
         <div class="col-md-2">&nbsp;</div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <label for="userName" class="form-label">User Name</label>
           <input type="text" class="form-control" id="userName" name="userName" placeholder="Enter your User Name">
         </div>
-        <div class="col-md-4">
-          <label for="userFile" class="form-label">Upload File</label>
-          <input type="file" multiple="multiple" class="form-control" id="userFile" name="userFile">
+        <div class="col-md-3">
+          <label for="fileinput" class="form-label">Upload File</label>
+          <input type="file" class="form-control" id="userFile" name="userFile">
         </div>
+
+        <div class="col-md-3">
+            <label for="fileinput" class="form-label">Documents File</label>
+            <input type="file" multiple="multiple" class="form-control" id="userDocuments" name="userDocuments">
+          </div>
         
-        <div class="col-md-2">&nbsp;</div>
+        <div class="col-md-1">&nbsp;</div>
         <!-- EO 1st Row -->
 
         <!-- 2nd Row -->
         
         <!-- EO 2nd Row --> 
         <div class="col-md-9">&nbsp;</div> 
-        <div class="col-md-3">
+        <div class="col-md-3" style="text-align: center;">
           <button type="submit" class="btn btn-primary">Submit</button>
         </div>      
       </form>
