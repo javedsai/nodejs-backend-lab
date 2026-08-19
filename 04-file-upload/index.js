@@ -90,6 +90,18 @@ app.post('/save-form', upload.fields([
     return res.send(req.files)
 })
 
+app.use((error, req, res, next)=>{
+    if (error instanceof multer.MulterError) {
+        if (error.code == 'LIMIT_UNEXPECTED_FILE'){
+            return res.status(400).send('Error: Too many files uploaded! ')
+        }
+        return res.status(400).send(`Multer Error: ${error.message}: ${error.code}`)
+    } else if (error) {
+        return res.status(500).send(`Something went wrong: ${error.message}`)
+    }
+    next()
+})
+
 app.listen(3000, () => {
     console.log("Application is running at port 3000")
 })
