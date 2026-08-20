@@ -38,6 +38,7 @@ Build and showcase practical backend projects using the Node.js ecosystem, progr
 | **02-middleware-project** | Middleware | **Node.js, Express.js, Middleware** | ✅ Completed |
 | **03-form-validation** | Form Validation | **Node.js, Express.js, Middleware** | ✅ Completed |
 | **04-file-upload** | File Upload | **Node.js, Express.js, Middleware, Multer Package** | ✅ Completed |
+| **04-session-project** | Session | **Node.js, Express.js, Middleware, Session** | ✅ Completed |
 
 
 ---
