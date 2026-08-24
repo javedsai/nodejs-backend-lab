@@ -32,11 +32,6 @@ app.get('/', (req, res) => {
 
 app.get('/about', (req, res) => {
     res.send(req.session)
-    // if (req.session.username) {
-    //     return res.send(`${req.session.username} you are on About Us Page and u have selected: ${req.session.cart}`)
-    // }else {
-    //     return res.send("Guest you are on About Us Page")
-    // }
 })
 
 app.get('/set-session', (req, res) => {
@@ -54,15 +49,10 @@ app.get('/get-session', (req, res) => {
 })
 
 app.get('/delete-only-cart', (req, res) => {
-    // res.send(req.session)
-    console.log(`Initial session value: ${req.session.cart}`)
     if (req.session.cart) {
-        console.log(`Before Delete: ${req.session.cart}`)
         delete req.session.cart
-        console.log(`After Delete: ${req.session.cart}`)
         return res.send("Cart Deleted Successfully")
     } else {
-        console.log(`In Else: ${req.session.cart}`)
         return res.send("Cart is empty")
     }
 })

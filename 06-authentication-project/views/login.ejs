@@ -1,0 +1,42 @@
+<%- include('./partials/header.ejs') %>
+<!-- header section above-->
+    <div class="row container" style="margin-top: 5px;"><br/>
+      <h3 style="text-align:center;">Login Form</h3>
+      <% if (errors) { %>
+      <div class="row mb-3">
+        <div class="col-md-4">&nbsp;</div>
+        <div class="col-6">
+          <div class="alert alert-danger" >           
+              <%= errors %>
+          </div>
+        </div>
+      </div>
+    <% } %>        
+      <!-- Form -->
+      <form class="row g-3" method="post" action="/login">        
+        <!-- 1st Row -->
+        <div class="col-md-2">&nbsp;</div>
+        
+        <div class="col-md-3">
+            <label for="username" class="form-label">User Name</label>
+            <input type="text" class="form-control" id="username" name="username">
+        </div>
+        <div class="col-md-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" name="password">
+        </div>
+        <div class="col-md-4">&nbsp;</div>
+        <!-- EO 1st Row -->
+
+        <!-- 2nd Row -->
+
+        <!-- EO 2nd Row --> 
+        <div class="col-md-2">&nbsp;</div> 
+        <div class="col-md-3">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>      
+      </form>
+    </div>
+    
+<!-- Footer Section below -->
+<%- include('./partials/footer.ejs') %>

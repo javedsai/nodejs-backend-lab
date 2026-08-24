@@ -1,0 +1,13 @@
+<%- include('./partials/header.ejs') %>
+<!-- header section above-->
+    <div class="row container" style="margin-top: 5px;"><br/>
+      <h3 style="text-align:center;">Home Page</h3>
+      <h4 style="text-align:center;">Welcome to Home Page, <%= username ? username : 'Guest' %></h4>
+
+      <a href="<%= username ? '/logout': '/login' %>" style="text-align:right;"><%= username ? 'Logout': 'Login' %></a>
+           
+      
+    </div>
+    
+<!-- Footer Section below -->
+<%- include('./partials/footer.ejs') %>

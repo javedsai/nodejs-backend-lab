@@ -26,3 +26,5 @@ Thumbs.db
 # Misc
 **/uploads
 **/uploads.*
+**/_docs
+**/_docs.*
