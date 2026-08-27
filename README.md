@@ -41,6 +41,7 @@ Build and showcase practical backend projects using the Node.js ecosystem, progr
 | **05-session-project** | Session | **Node.js, Express.js, Middleware, Session** | ✅ Completed |
 **06-authentication-project** | Authentication System | **Node.js, Express.js, Middleware, Session, bcrypt** | ✅ Completed |
 **07-cookie-project** | Cookie | **Node.js, Express.js, Middleware, Cookie** | ✅ Completed |
+**08-csrf-project** | CSRF Token | **Node.js, Express.js, Middleware, Cookie, CSRF** | ✅ Completed |
 
 
 ---
