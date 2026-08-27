@@ -8,24 +8,26 @@ app.use(express.urlencoded({extended:true}))
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 //cokies middleware
-app.use(cookieParser())
+// app.use(cookieParser())
+app.use(cookieParser('my-secret-key123'))//signed cookie
 
 //Routes
 app.get('/', (req, res) => {
     const home = "Home Page"
-    const username = req.cookies.username
+    // const username = req.cookies.username
+    const username = req.signedCookies.username
     if (username) {
         return res.send(`${home}: Cookie Found: ${username}`)
     } else {
         return res.send(`${home}: Cookie Not Found`)
     }
-    res.send("Welcome to homepage")
 })
 
 app.get('/set-cookie', (req, res) => {
-    res.cookie('username', 'javed', {
+    res.cookie('username', 'signed-javed', {
         maxAge: 1000 * 60 * 15,
-        httpOnly: true
+        httpOnly: true,
+        signed: true
     })
     res.send('Cookie has been set')
 })

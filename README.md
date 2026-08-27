@@ -40,7 +40,7 @@ Build and showcase practical backend projects using the Node.js ecosystem, progr
 | **04-file-upload** | File Upload | **Node.js, Express.js, Middleware, Multer Package** | ✅ Completed |
 | **05-session-project** | Session | **Node.js, Express.js, Middleware, Session** | ✅ Completed |
 **06-authentication-project** | Authentication System | **Node.js, Express.js, Middleware, Session, bcrypt** | ✅ Completed |
-**07-cookie-project** | Cookie | **Node.js, Express.js, Middleware, Cookie** | ⏳ In Progress |
+**07-cookie-project** | Cookie | **Node.js, Express.js, Middleware, Cookie** | ✅ Completed |
 
 
 ---
