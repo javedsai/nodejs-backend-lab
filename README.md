@@ -42,8 +42,7 @@ Build and showcase practical backend projects using the Node.js ecosystem, progr
 **06-authentication-project** | Authentication System | **Node.js, Express.js, Middleware, Session, bcrypt** | ✅ Completed |
 **07-cookie-project** | Cookie | **Node.js, Express.js, Middleware, Cookie** | ✅ Completed |
 **08-csrf-project** | CSRF Token | **Node.js, Express.js, Middleware, Cookie, CSRF** | ✅ Completed |
-**09-student-CRUD-API-project** | Student management application featuring CRUD operations, MVC Pattern, Image Upload, Error Handling and Pagination | **Node.js, Express.js, Middleware** | ⏳ In Progress |
-
+**09-student-CRUD-API-project** | Student Management application featuring RESTful CRUD APIs, MVC Pattern, Image Upload, Error Handling, Pagination, CORS, JWT Authentication, and a separate Frontend application consuming the CRUD APIs using Fetch API | **Node.js, Express.js, MongoDB, Mongoose, Multer, CORS, JWT, Fetch API** | ⏳ In Progress |
 
 ---
 
