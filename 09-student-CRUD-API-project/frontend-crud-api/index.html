@@ -37,6 +37,12 @@
         <tbody id="studentTableBody">           
         </tbody>    
       </table>
+      <!-- Navigation -->
+        <nav aria-label="Student pagination">
+            <ul id="pagination" class="pagination justify-content-center"></ul>
+        </nav>
+      <!-- EO Navigation -->
+      
     </div>
 
   <!-- Modal for viewStudent -->
@@ -265,15 +271,19 @@
 <script>
     const apiUrl = 'http://localhost:3000/api/students/'
     const imgUrl = 'http://localhost:3000/uploads/'
+    let currentPage = 1
+    let currentSearch = ''
     //View All Students
-    async function fetchStudents(search = ''){
-    const res = await fetch(`${apiUrl}?search=${encodeURIComponent(search)}`)
+    async function fetchStudents(search = '', page = 1){
+    currentSearch = search
+    currentPage = page
+    const res = await fetch(`${apiUrl}?search=${encodeURIComponent(search)}&page=${page}&limit=2`)
     const data =  await res.json()
     // console.log(data)
     let srno = 1
     const tBody = document.querySelector('#studentTableBody')
     tBody.innerHTML = ''    
-        data.forEach(student => {
+        data.students.forEach(student => {
             const profilePic = student.profile_pic ? imgUrl+student.profile_pic : 'https://placehold.net/avatar.png' 
 
             tBody.innerHTML += `
@@ -291,8 +301,50 @@
                 </tr>
             `
         })
+        renderPagination(data.totalPage)
     }
     fetchStudents()
+
+    //Render Pagination
+    function renderPagination(totalPages) {
+        const container = document.querySelector('#pagination')
+        container.innerHTML = ''
+
+        //Previous Link
+        const prevLink = document.createElement('li')
+        prevLink.className = 'page-item' + (currentPage === 1 ? ' disabled' : '')
+        prevLink.innerHTML = `<a href="#" class="page-link">Previous</a>`
+        if (currentPage > 1) {
+            prevLink.addEventListener('click', (e) => {
+            e.preventDefault()
+            fetchStudents(currentSearch, currentPage-1)
+            })
+        }
+        container.appendChild(prevLink)
+
+        for (let i=1; i<=totalPages; i++) {
+            const li = document.createElement('li')
+            li.className = 'page-item' + (currentPage === i ? ' active' : '')
+            li.innerHTML = `<a class="page-link" href="#">${i}</a>`
+            li.addEventListener('click', (e) => {
+                e.preventDefault()
+                fetchStudents(currentSearch, i)
+            })
+            container.appendChild(li)
+        }
+
+        //Next Link
+        const nextLink = document.createElement('li')
+        nextLink.className = 'page-item' + (currentPage === totalPages ? ' disabled' : '')
+        nextLink.innerHTML = '<a class="page-link" href="#">Next</a>'
+        if (currentPage < totalPages) {
+            nextLink.addEventListener('click', (e) => {
+            e.preventDefault()
+            fetchStudents(currentSearch, currentPage + 1)
+            })
+        }
+        container.appendChild(nextLink)        
+    }
 
     // View Single Student Record
     const viewStudent = async (id) => {
