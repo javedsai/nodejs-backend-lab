@@ -38,15 +38,28 @@ const upload = multer({
 // GET all students
 router.get('/', async (req, res) => {
     try {
+        // http://localhost:3000/api/students?page=1&limit=5
         const search = req.query.search || ''
+        let page = parseInt(req.query.page) || '1'
+        let limit = parseInt(req.query.limit) || '5'
+        let skip = (page - 1) * limit
         const query = {
             $or: [
                 { first_name: {$regex: search, $options: 'i'} },
                 { last_name: {$regex: search, $options: 'i'} }
             ]
         }
-        const students = await Student.find(query)
-        res.json(students)
+        const total = await Student.countDocuments(query)
+        // const students = await Student.find(query)
+        const student = await Student.find(query).skip(skip).limit(limit)
+        // res.json(students)
+        res.json({
+            students: student,
+            total: total,
+            page: page,
+            limit: limit,
+            totalPage: Math.ceil(total / limit)
+        })
     }catch (err) {
         res.status(500).json({message: err.message})
     }
