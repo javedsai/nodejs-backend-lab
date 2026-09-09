@@ -38,7 +38,9 @@
         </tbody>    
       </table>
       <!-- Navigation -->
-      <ul id="pagination" class="pagination justify-content-center"></ul>
+        <nav aria-label="Student pagination">
+            <ul id="pagination" class="pagination justify-content-center"></ul>
+        </nav>
       <!-- EO Navigation -->
       
     </div>
@@ -305,7 +307,6 @@
 
     //Render Pagination
     function renderPagination(totalPages) {
-        console.log(currentPage, typeof currentPage)
         const container = document.querySelector('#pagination')
         container.innerHTML = ''
 
@@ -315,7 +316,9 @@
         prevLink.innerHTML = `<a href="#" class="page-link">Previous</a>`
         prevLink.addEventListener('click', (e) => {
             e.preventDefault()
-            fetchStudents(currentSearch, currentPage-1)
+            if (currentPage > 1) {
+                fetchStudents(currentSearch, currentPage-1)
+            }
         })
         container.appendChild(prevLink)
 
@@ -336,7 +339,9 @@
         nextLink.className = 'page-item' + (currentPage === totalPages ? ' disabled' : '')
         nextLink.addEventListener('click', (e) => {
             e.preventDefault()
-            fetchStudents(currentSearch, currentPage + 1)
+            if (currentPage < totalPages) {
+                fetchStudents(currentSearch, currentPage + 1)
+            }
         })
         container.appendChild(nextLink)        
     }
