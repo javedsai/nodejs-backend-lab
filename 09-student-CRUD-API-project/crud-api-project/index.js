@@ -1,6 +1,8 @@
 import express from "express"
 import studentRoutes from "./routes/students.routes.js"
+import userRoutes from "./routes/users.routes.js"
 import {connectDB} from "./config/database.js"
+import {auth} from "./middleware/auth.js"
 import multer from "multer"
 import cors from "cors"
 import path from "path"
@@ -17,8 +19,13 @@ app.set('view engine', 'ejs')//not required
 // app.use(express.static(path.join(__dirname, 'uploads')))//not required
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 app.use(cors())
+// Mount Auth API routes under /api/auth
+app.use('/api/users', userRoutes)
+// Added auth middleware before student routes
+app.use(auth)
 // Mount student API routes under /api/students
 app.use('/api/students', studentRoutes)
+
 
 // --- Error-handling middleware for multer + general errors ---
 app.use((err, req, res, next) => {
