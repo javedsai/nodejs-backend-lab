@@ -38,7 +38,8 @@ const upload = multer({
 // GET all students
 router.get('/', async (req, res) => {
     try {
-        // http://localhost:3000/api/students?page=1&limit=5
+        /* Basically we need to make this URL on postman that is why it is added here in the comment so that it becomes easy for writing the code to achieve this    
+         http://localhost:3000/api/students?page=1&limit=5 */
         const search = req.query.search || ''
         let page = parseInt(req.query.page) || '1'
         let limit = parseInt(req.query.limit) || '5'
