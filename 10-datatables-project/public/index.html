@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users Data</title>
+    <link href="https://cdn.datatables.net/v/dt/dt-3.0.4/b-4.0.3/datatables.min.css" rel="stylesheet" integrity="sha384-gOqi5Lt9kr8pIaw9LHrYvVEKqncHD4hncmHxaBji4s+atviWnJG7uijb4tsuirS1" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/v/dt/dt-3.0.4/b-4.0.3/datatables.min.js" integrity="sha384-fosoXPxRbV1dmYLxeZFi01+hPVgrjfucXrEf03yGcvHVeehhFPJ6rncDmh1/MXr+" crossorigin="anonymous"></script>
+    <!-- JSZip for Excel export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <!-- pdfmake for PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+
+    <style>
+        #container {
+        width: 1000px;
+        margin: 0 auto;
+        }
+    </style>    
+</head>
+<body>
+    <div id="container">
+        <h2>Users List - Data Table</h2>
+        <table id="userTable" class="display">
+            <thead>
+                <tr>
+                    <td>Sr.No</td>
+                    <td>Name</td>
+                    <th>Email</th>
+                    <th>Age</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
