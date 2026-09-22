@@ -114,7 +114,7 @@ app.get('/delete-folder', (req, res) => {
 
 //read pdf
 app.get('/read-pdf', (req, res) => {
-    fs.readFile('./public/YaHuBaBa_NodeJS_Style_Reference_v1.pdf', (err, data) => {
+    fs.readFile('./public/resume.pdf', (err, data) => {
         if (err) {
             return res.status(500).status("PDF file not found");
         }
