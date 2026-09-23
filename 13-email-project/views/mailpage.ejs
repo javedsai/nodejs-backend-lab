@@ -1,0 +1,49 @@
+<%- include('./partials/header.ejs') %>
+<!-- header section above-->
+    <div class="row container" style="margin-top: 5px;"><br/>
+      <h3 style="text-align:center;">Email System</h3>
+      <% if (errors.length > 0) { %>
+      <div class="row mb-3">
+        <div class="col-md-4">&nbsp;</div>
+        <div class="col-6">
+          <div class="alert alert-danger" >           
+            <%= errors %>
+        </div>
+        </div>
+      </div>
+    <% } %> 
+      <!-- Form -->
+      <form class="row g-3" method="post" action="/send-email">  
+        <!-- 1st Row -->
+        <div class="col-md-2">&nbsp;</div>
+        
+        <div class="col-md-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="to" name="to">
+        </div>
+        <div class="col-md-3">
+          <label for="subject" class="form-label">Subject</label>
+          <input type="text" class="form-control" id="subject" name="subject">
+        </div>        
+        <div class="col-md-4">&nbsp;</div>
+        <!-- EO 1st Row -->
+
+        <!-- 2nd Row -->
+        <div class="col-md-2">&nbsp;</div> 
+        <div class="col-md-4">
+          <label for="message" class="form-label">Message</label>
+          <textarea class="form-control" name="message" id="message"></textarea>
+        </div>
+        <div class="col-md-6">&nbsp;</div>
+
+        <!-- EO 2nd Row --> 
+        <div class="col-md-2">&nbsp;</div> 
+        <div class="col-md-3">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <!-- <div class="col-md-7">&nbsp;</div>       -->
+      </form>
+    </div>
+    
+<!-- Footer Section below -->
+<%- include('./partials/footer.ejs') %>
