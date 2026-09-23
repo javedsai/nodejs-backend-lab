@@ -46,6 +46,7 @@ Build and showcase practical backend projects using the Node.js ecosystem, progr
 | **10-datatables-project** | DataTables integration featuring Pagination, Sorting, and Export to Excel, PDF, CSV, and Clipboard using the DataTables jQuery plugin | **Node.js, Express.js, MongoDB, Mongoose, CORS, jQuery, DataTables** | ✅ Completed |
 | **11-filesystem-project** | Node.js File System implementation demonstrating file creation, reading, updating, renaming, and deletion using the built-in `fs` module with Express routes | **Node.js, Express.js, File System (fs), Nodemon** | ✅ Completed |
 | **12-path-project** | Node.js Path Module implementation demonstrating path manipulation operations such as basename, dirname, extension extraction, path joining, resolving, parsing, and formatting using the built-in `path` module | **Node.js, Express.js, Path Module (path), Nodemon** | ✅ Completed |
+| **13-email-project** | Email functionality using Nodemailer with Gmail SMTP, featuring an EJS email form, dynamic recipient, subject and message handling, Gmail App Password authentication, and secure credential management using environment variables | **Node.js, Express.js, EJS, Nodemailer, dotenv, Nodemon** | ✅ Completed |
 ---
 
 ## 📌 Notes
