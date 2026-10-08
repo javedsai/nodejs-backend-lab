@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabulator</title>
+    <link href="https://unpkg.com/tabulator-tables@6.5.0/dist/css/tabulator.min.css" rel="stylesheet">
+    <style>
+        .container {
+            width: 1000px;
+            margin-left: auto;
+            margin-right: auto; /* horizontally centered */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Print / Downloads button -->
+        <div style="margin-bottom: 20px;">
+            <button id="print-table">Print Table</button>
+            <button id="download-csv">Download CSV</button>
+            <button id="download-json">Download JSON</button>
+            <button id="download-xlsx">Download XLSX</button>
+            <button id="download-pdf">Download PDF</button>
+            <button id="download-html">Download HTML</button>
+        </div>
+
+        <!-- Custom Search Filter -->
+        <div style="margin-bottom: 20px;">
+            <select id="filter-field">
+                <option></option>
+                <option value="name">Name</option>
+                <option value="email">Email</option>
+                <option value="age">Age</option>
+            </select>
+
+            <select id="filter-type">
+                <option value="=">=</option>
+                <option value="<"><</option>
+                <option value="<="><=</option>
+                <option value=">">></option>
+                <option value=">=">>=</option>
+                <option value="!=">!=</option>
+                <option value="like">like</option>
+            </select>
+            <input id="filter-value" type="text" placeholder="value to filter">
+        </div>
+        
+        <div id="user-table"></div>
+    </div>
+<script type="text/javascript" src="https://unpkg.com/tabulator-tables@6.5.0/dist/js/tabulator.min.js"></script>
+<!-- Export Libraries -->
+<script type="text/javascript" src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.20/jspdf.plugin.autotable.min.js"></script>
+<script src="tabulator.js"></script>
+</body>
+</html>

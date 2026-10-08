@@ -49,6 +49,7 @@ Build and showcase practical backend projects using the Node.js ecosystem, progr
 | **13-email-project** | Email functionality using Nodemailer with Gmail SMTP, featuring an EJS email form, dynamic recipient, subject and message handling, Gmail App Password authentication, and secure credential management using environment variables | **Node.js, Express.js, EJS, Nodemailer, dotenv, Nodemon** | ✅ Completed |
 | **14-sms-project** | SMS functionality using Twilio Messaging API, featuring Express.js integration, Twilio SDK, trial SMS templates, and secure credential management using environment variables | **Node.js, Express.js, EJS, Twilio, dotenv, Nodemon** | ✅ Completed |
 | **15-OAuth-Project** | Google OAuth 2.0 authentication using Passport.js, featuring Google Sign-In, Express sessions, protected routes, user profile information, and logout functionality | **Node.js, Express.js, Passport.js, passport-google-oauth20, express-session, dotenv, Nodemon** | ✅ Completed |
+| **16-tabulator-tables-project** | Tabulator.js integration featuring dynamic data tables, MongoDB data retrieval through AJAX, column formatting, header filtering, and custom action buttons (View, Update, Delete) using Express REST APIs | **Node.js, Express.js, MongoDB, Mongoose, JavaScript, Tabulator.js, AJAX** | ✅ Completed |  
 ---
 
 ## 📌 Notes
